@@ -2,6 +2,10 @@
 
 const currentPollEl = document.getElementById('current-poll-container');
 const newPollEl = document.getElementById('new-poll');
+const optionAAddButton = document.getElementById('')
+
+
+
 
 
 
@@ -16,23 +20,21 @@ let pastPolls = [];
 // set event listeners 
 newPollEl.addEventListener('submit', (e) => {
     e.preventDefault();
-    const data = new FormData(currentPollEl);
+    const data = new FormData(newPollEl);
     const userQuestion = data.get('question');
     const userOptionA = data.get('option-A');
     const userOptionB = data.get('option-B');
-    const votesOne = data.get('vote-one');
-    const votesTwo = data.get('vote-two');
     
     question = userQuestion;
     optionA = userOptionA;
     optionB = userOptionB;
-    votesOne = userVotesA;
-    votesTwo = userVotesB;
-
+    
     renderPoll();
+
     displayCurrentPoll();
 
 });
+
 
 
   // get user input
@@ -53,10 +55,16 @@ function renderPoll(question, optionA, optionB, votesOne, votesTwo) {
     const votesTwoEl = document.createElement('p');
     votesTwoEl.textContent = votesTwo;
 
-    currentPollEl.append(question, optionA, optionB, votesOne, votesTwo);
+    currentPollEl.append(questionEl, optionAEl, optionBEl, votesOneEl, votesTwoEl);
 
     return currentPollEl;
 
-  
-  
+}
+
+function displayCurrentPoll(){
+    newPollEl.reset();
+    const currentPollData = renderPoll(question, optionA, optionB, votesOne, votesTwo);
+    currentPollEl.append(currentPollData);
+
+
 }

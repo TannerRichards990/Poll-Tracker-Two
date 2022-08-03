@@ -27,9 +27,9 @@
     <br>
         
         
-        <h2 id="current-poll">Edit Poll</h2>
-        <section id="new-poll">
-            <form>
+        <h2>Edit Poll</h2>
+        <section>
+            <form id="new-poll">
                 <label>
                     Question:
                     <input required name="question">
@@ -42,25 +42,22 @@
                     Option B:
                     <input required name="option-B">
                 </label>
-                <button class="action">Start Poll</button>
-            </form>
+                <button id="start-poll-button">Start Poll</button>
+                </form>
+                <br>
+                
         </section>
-
+        <br>
         <section id="current-poll-results">
 
         </section>
 
-        <section id="vote-counter">
-            <span class="option a">Option A</span>
-            <button class="vote a">Vote</button>
-            <button class="remove a">Remove Vote</button>
-            <span class="option b">Option B</span>
-            <button class="vote b">Vote</button>
-            <button class="remove b">Remove Vote</button>
-            <br>
-            <button class="action" id="end-poll">End Poll</button>
-        </section>
+        <button id="option-a-add-button">add</button>
+        <button id="option-a-subtract-button">subtract</button>
+        <button id="option-b-add-button">add</button>
+        <button id="option-b-subtract-button">subtract</button>
         
+        <button id="finish-poll">finish poll</button>
         
 
         <section id="past-polls">
