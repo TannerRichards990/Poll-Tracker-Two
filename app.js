@@ -2,10 +2,12 @@
 
 const currentPollEl = document.getElementById('current-poll-container');
 const newPollEl = document.getElementById('new-poll');
-const optionAAddButton = document.getElementById('')
-
-
-
+const optionAAddButton = document.getElementById('option-a-add-button');
+const optionASubtractButton = document.getElementById('option-a-subtract-button');
+const optionBAddButton = document.getElementById('option-b-add-button');
+const optionBSubtractButton = document.getElementById('option-b-subtract-button');
+const finishPollButton = document.getElementById('finish-poll-button');
+const pastPollsContainer = document.getElementById('past-poll-container');
 
 
 
@@ -35,7 +37,41 @@ newPollEl.addEventListener('submit', (e) => {
 
 });
 
+optionAAddButton.addEventListener('click', () => {
+    votesOne++;
+    
+    displayCurrentPoll();
 
+});
+
+optionBAddButton.addEventListener('click', () => {
+    votesTwo++;
+   
+    displayCurrentPoll();
+});
+
+optionASubtractButton.addEventListener('click', () => {
+    votesOne--;
+    
+    displayCurrentPoll();
+
+});
+
+optionBSubtractButton.addEventListener('click', () => {
+    votesTwo--;
+    
+    displayCurrentPoll();
+});
+
+finishPollButton.addEventListener('click', () => {
+    pastPollsContainer.textContent = '';
+    displayPastPolls();
+    votesOne = 0;
+    votesTwo = 0;
+    currentPollEl.textContent = '';
+
+
+});
 
   // get user input
   // use user input to update state 
@@ -67,4 +103,20 @@ function displayCurrentPoll(){
     currentPollEl.append(currentPollData);
 
 
+}
+
+function displayPastPolls() {
+    const pastPoll = {
+        question: question,
+        optionA: optionA,
+        optionB: optionB,
+        votesOne: votesOne,
+        votesTwo: votesTwo,
+    };
+    pastPolls.push(pastPoll);
+  
+    for (let poll of pastPoll) {
+        const currentPastPoll = renderPoll(poll.question, poll.optionA, poll.optionB, poll.votesOne, poll.votesTwo);
+        pastPollsContainer.append(currentPastPoll);
+    }
 }
