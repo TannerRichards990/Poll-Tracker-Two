@@ -32,22 +32,40 @@
             <form>
                 <label>
                     Question:
-                    <input name="question">
+                    <input required name="question">
                 </label>
                 <label>
                     Option A:
-                    <input name="option-A">
+                    <input required name="option-A">
                 </label>
                 <label>
                     Option B:
-                    <input name="option-B">
+                    <input required name="option-B">
                 </label>
                 <button class="action">Start Poll</button>
             </form>
         </section>
 
+        <section id="current-poll-results">
 
+        </section>
+
+        <section id="vote-counter">
+            <span class="option a">Option A</span>
+            <button class="vote a">Vote</button>
+            <button class="remove a">Remove Vote</button>
+            <span class="option b">Option B</span>
+            <button class="vote b">Vote</button>
+            <button class="remove b">Remove Vote</button>
+            <br>
+            <button class="action" id="end-poll">End Poll</button>
+        </section>
         
+        
+
+        <section id="past-polls">
+            <h2>Past Polls</h2>
+        </section>
 
     </main>
 
