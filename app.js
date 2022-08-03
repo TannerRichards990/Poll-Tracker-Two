@@ -39,27 +39,23 @@ newPollEl.addEventListener('submit', (e) => {
 
 optionAAddButton.addEventListener('click', () => {
     votesOne++;
-    
     displayCurrentPoll();
 
 });
 
 optionBAddButton.addEventListener('click', () => {
     votesTwo++;
-   
     displayCurrentPoll();
 });
 
 optionASubtractButton.addEventListener('click', () => {
     votesOne--;
-    
     displayCurrentPoll();
 
 });
 
 optionBSubtractButton.addEventListener('click', () => {
     votesTwo--;
-    
     displayCurrentPoll();
 });
 
@@ -99,6 +95,7 @@ function renderPoll(question, optionA, optionB, votesOne, votesTwo) {
 
 function displayCurrentPoll(){
     newPollEl.reset();
+    currentPollEl.textContent = '';
     const currentPollData = renderPoll(question, optionA, optionB, votesOne, votesTwo);
     currentPollEl.append(currentPollData);
 
@@ -115,7 +112,7 @@ function displayPastPolls() {
     };
     pastPolls.push(pastPoll);
   
-    for (let poll of pastPoll) {
+    for (let poll of pastPolls) {
         const currentPastPoll = renderPoll(poll.question, poll.optionA, poll.optionB, poll.votesOne, poll.votesTwo);
         pastPollsContainer.append(currentPastPoll);
     }
