@@ -33,3 +33,33 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+
+#option-a-add-button {
+    color: steelblue;
+    background-color: black;
+    margin: 10px;
+}
+
+#option-a-subtract-button {
+    color: steelblue;
+    background-color: black;
+    margin: 10px;
+    }
+
+#option-b-add-button{
+    color: maroon;
+    background-color: khaki;
+    margin: 10px;
+}
+
+#option-b-subtract-button{
+    color: maroon;
+    background-color: khaki;
+    margin: 10px;
+}
+
+#finish-poll-button {
+    color:aquamarine;
+    background-color: red;
+    
+}
